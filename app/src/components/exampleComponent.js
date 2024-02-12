@@ -11,7 +11,19 @@ const ExampleComponent = () => {
         };
 
         ws.onmessage = (event) => {
-            console.log('Received from WebSocket server: ' + event.data);
+            if (event.data instanceof Blob) {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    const textData = reader.result;
+                    console.log(`WebSocket server talking: ${textData}`);
+                };
+                reader.readAsText(event.data);
+            } else {
+                const receivedData = event.data.toString();
+                console.log(`WebSocket server talking: ${receivedData}`);
+               
+            }
+            
         };
 
         ws.onclose = () => {
@@ -23,7 +35,10 @@ const ExampleComponent = () => {
         };
     }, []);
 
-    return <div>Check the console for WebSocket server communication.</div>;
+    return (<>
+    <div>go to console and terminals</div>
+    </>
+        );
 };
 
 export default ExampleComponent;
