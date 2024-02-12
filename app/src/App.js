@@ -3,6 +3,7 @@ import './App.css';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 import Work from './pages/Work';
+import ExampleComponent from './components/exampleComponent';
 function App() {
   return (
     <div className="App">
@@ -12,6 +13,7 @@ function App() {
          <Route path='/work' element={<Work/>}/>
       </Routes>
     </Router>
+    <ExampleComponent></ExampleComponent>
      
     </div>
   );
