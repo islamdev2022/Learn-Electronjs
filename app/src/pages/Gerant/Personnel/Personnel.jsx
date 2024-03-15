@@ -3,15 +3,12 @@ import Ajouter from './Ajouter';
 import Modifier from './Modifier';
 import Suprimer from './Suprimer';
 import Afficher from './Afficher';
+import Header from './Header';
 const Personnel = () => {
-    const [searchTerm, setSearchTerm] = useState('');
+    
     const [activeItem, setActiveItem] = useState(null);
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    // Handle the search logic here
-    console.log(searchTerm);
-  };
+  
 
   const renderComponent = () => {
     switch (activeItem) {
@@ -24,7 +21,7 @@ const Personnel = () => {
       case 'item4':
         return <Suprimer />;
       default:
-        return <div>Select an item</div>;
+        return <Afficher></Afficher>;
     }
   };
     return ( 
@@ -70,18 +67,7 @@ const Personnel = () => {
         </div> 
         <div className="w-2 h-screen bg-green-dark1 ml-2"></div>
         <div className="table  h-fit mx-auto">
-             <div className="flex h-fit mt-10 items-center gap-64 ">
-        <h1 className="text-3xl font-bold text-white bg-green-dark1 p-1 h-fit ">Laboratoire</h1>
-        <div className="h-10 flex gap-1">
-        <label htmlFor="username " className="text-green-dark1 font-bold p-2 bg-white rounded-s-md">Rechercher  </label>
-        <input type="text" placeholder="id, nom ,... " className="p-4 font-bold rounded-e-md w-96 outline-none" value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}/>
-        <img src="assets/chercher copy.png" alt="" className="w-8 h-10 bg-transparent relative right-10 hover:cursor-pointer" onClick={handleSearch}/>
-        <img src="assets/notification copy (1).png" alt="notification" className='size-8 mt-1' />
-        <img src="assets/parametres-gear copy.png" alt="paramater" className="ml-8 mt-1 hover:cursor-pointer size-8" />
-        </div>
-        
-        </div> 
+            <Header></Header>
         <div className="w-full p-4">
         {/* Render the active component */}
         {renderComponent()}

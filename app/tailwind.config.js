@@ -1,6 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,jsx,js}"],
+  content: [
+    './pages/**/*.{js,jsx}',
+    './components/**/*.{js,jsx}',
+    './app/**/*.{js,jsx}',
+    './src/**/*.{js,jsx}',
+  ],
+  darkMode: ["class"],
+
   theme: {
     container: {
       center: true,
@@ -9,7 +16,30 @@ module.exports = {
         "2xl": "1400px",
       },
     },
-    colors: {
+   
+    borderRadius: {
+      '2xl':`calc(var(--radius) + 10px)`,
+      xl:`calc(var(--radius) + 5px)`,
+      lg: `var(--radius)`,
+      md: `calc(var(--radius) - 2px)`,
+      sm: "calc(var(--radius) - 4px)",
+    },
+   
+    keyframes: {
+      "accordion-down": {
+        from: { height: "0" },
+        to: { height: "var(--radix-accordion-content-height)" },
+      },
+      "accordion-up": {
+        from: { height: "var(--radix-accordion-content-height)" },
+        to: { height: "0" },
+      },
+    },
+    animation: {
+      "accordion-down": "accordion-down 0.2s ease-out",
+      "accordion-up": "accordion-up 0.2s ease-out",
+    },
+    extend: { colors: {
       'white':'#ffff',
       
       'green-cyan' : '#6ec6ba',
@@ -52,31 +82,10 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-    },
-    borderRadius: {
-      '2xl':`calc(var(--radius) + 10px)`,
-      xl:`calc(var(--radius) + 5px)`,
-      lg: `var(--radius)`,
-      md: `calc(var(--radius) - 2px)`,
-      sm: "calc(var(--radius) - 4px)",
-    },
-   
-    keyframes: {
-      "accordion-down": {
-        from: { height: "0" },
-        to: { height: "var(--radix-accordion-content-height)" },
-      },
-      "accordion-up": {
-        from: { height: "var(--radix-accordion-content-height)" },
-        to: { height: "0" },
-      },
-    },
-    animation: {
-      "accordion-down": "accordion-down 0.2s ease-out",
-      "accordion-up": "accordion-up 0.2s ease-out",
-    },
-    extend: {},
+    },},
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require('tailwind-scrollbar'),
+    require("tailwindcss-animate")],
 }
 
