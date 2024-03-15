@@ -7,14 +7,17 @@ function createMainWindow(){
         title : "Electron",
         width : 1000,
         height : 600,
+        icon:path.join(__dirname,'./app/public/assets/favicon.ico'),
+        autoHideMenuBar:true,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
+            
           },
-
-        
     })
-mainWindow.webContents.openDevTools()
+    mainWindow.setMenu(null);
+
+// mainWindow.webContents.openDevTools()
     const startUrl = url.format({
         pathname : path.join(__dirname, './app/build/index.html'),
         protocol:'file'

@@ -12,7 +12,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-gray-200"> 
+    <div className="flex min-h-screen  bg-white"> 
       <div className="flex flex-col w-full md:flex-row"> 
       <img src="assets/logo logiciel.png" alt="" className='absolute w-10 -rotate-45 m-3'/>
      <img src="assets/background.jpg" width={500} alt=""  />
@@ -23,23 +23,23 @@ const Login = () => {
             <h1 className='text-4xl relative bottom-32'>Connectez-vous</h1>
             <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
               <div className="mb-4">
-              <label htmlFor="input" className="text-xs text-gray-600 font-semibold relative top-2 mr-80 bg-gray-200 px-1">
+              <label htmlFor="input" className="text-xs text-green font-semibold relative top-2 mr-72 bg-white px-1">
     Identifiant
   </label>
   <input 
     type="text" 
     placeholder="Write here..." 
     name="input" 
-    className="p-4 text-xs border border-gray-600 rounded-lg  bg-gray-200 focus:outline-none w-full"
+    className="p-4 text-xs border border-green rounded-sm bg-gray-200 focus:outline-none w-96 "
     onChange={(e) => setPassword(e.target.value)}
   />
               </div>
               <div className='mb-20'>
-                <label className="text-xs text-gray-600 font-semibold relative top-2 mr-80 bg-gray-200 px-1" htmlFor="password">
+                <label className="text-xs text-green font-semibold relative top-2 mr-72 bg-white px-1" htmlFor="password">
                   Mot de passe
                 </label>
                 <input
-                  className="p-4 text-xs border border-gray-600 rounded-lg  bg-gray-200 focus:outline-none w-full"
+                  className="p-4 text-xs border border-green rounded-sm bg-gray-200 focus:outline-none w-96"
                   id="password"
                   type="password"
                   placeholder="******************"
@@ -48,7 +48,7 @@ const Login = () => {
               </div>
               <div className="flex items-center justify-center mb-20">
                 <Link to="/home"><button
-                  className="bg-green-800 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-xl w-44 focus:outline-none focus:shadow-outline"
+                  className=" bg-green-dark1 text-lg text-white font-bold py-3 mt-6 rounded-lg w-44 focus:outline-none focus:shadow-outline"
                   type="submit">Se connecter</button>
                 </Link>
                 

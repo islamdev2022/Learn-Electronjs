@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 const AlertModal = ({ onClose, onContinue }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center">
-      <div className="bg-white p-6 rounded-3xl shadow-lg w-96">
+      <div className="bg-white p-6 rounded-lg shadow-lg w-96">
         <h2 className="text-lg font-bold mb-8">Voulez-vous deconnecter ?</h2>
         
         <div className="flex justify-evenly">
-        <Link to="/"><button onClick={onContinue} className="bg-green-900 px-8 h-8 text-white rounded-3xl font-bold">
+        <Link to="/"><button onClick={onContinue} className="bg-green-dark1 px-8 h-8 text-white rounded-lg font-bold">
             Oui
           </button>
           </Link>
-          <button onClick={onClose} className="bg-gray-400 rounded-3xl h-8 px-6 font-bold text-white">
+          <button onClick={onClose} className="bg-gray rounded-lg h-8 px-6 font-bold text-white">
             Annuler
           </button>
           
@@ -34,34 +34,34 @@ const Home = () => {
   };
     return (
          <div>
-<div className="h-20 bg-green-800 rounded-b-3xl fixed w-full">
+<div className="h-20 bg-green-dark1 rounded-b-2xl fixed w-full">
     <img src="assets/logo logiciel.png" alt="" className="absolute w-12 m-5  -rotate-45 " />
       <h1 className="text-3xl text-white p-5">Bienvenue dans votre platforme</h1>
 </div>
        <div className="">
-        <div className=" flex justify-evenly h-screen items-center  ">
-            <div className="flex items-center justify-center h-48 w-40 bg-green-900 rounded-lg hover:cursor-pointer">
+        <div className=" flex justify-center gap-16 h-screen items-center  ">
+            <div className="flex items-center justify-center h-64 w-56 bg-green-dark1 rounded-2xl hover:cursor-pointer">
                 <div><img src="assets/en-stock.png" width={100} alt="" className=""/>
-            <h1 className=" text-white font-bold mt-3">Stock</h1>
+            <h1 className=" text-white text-lg font-bold mt-10">Stock</h1>
                     </div> 
             
             </div>
-             <div className=" flex items-center justify-center h-48 w-40 bg-green-900 rounded-lg hover:cursor-pointer">
-                <div> <img src="assets/comptabilite.png" width={100} alt="" className="ml-1"/>
-            <h1 className=" text-white font-bold mt-3">Comptabilitee</h1>
+             <div className=" flex items-center justify-center h-64 w-56 bg-green-dark1 rounded-2xl hover:cursor-pointer">
+                <div> <img src="assets/comptabilite.png" width={100} alt="" className=" table mx-auto"/>
+            <h1 className=" text-white text-lg font-bold mt-10">Comptabilitee</h1>
             </div> 
            
             </div>
             <Link to="/Personnel">
-            <div className=" flex items-center justify-center h-48 w-40 bg-green-900 rounded-lg hover:cursor-pointer"> 
+            <div className=" flex items-center justify-center h-64 w-56 bg-green-dark1 rounded-2xl hover:cursor-pointer"> 
             <div>
                  <img src="assets/personnel.png" width={100} alt="" className=""/>
-            <h1 className=" text-white font-bold mt-3">Personnel</h1>
+            <h1 className=" text-white text-lg font-bold mt-10">Personnel</h1>
             </div>
            
             </div></Link>
             
-           <button className="absolute bottom-32 bg-green-800 w-40 text-white h-10 rounded-xl font-bold" onClick={() => setShowAlert(true)} > Deconnexion</button>
+           <button className="absolute bottom-24 bg-green-dark1 w-48 text-white h-12 rounded-lg font-bold" onClick={() => setShowAlert(true)} > Deconnexion</button>
            {showAlert && <AlertModal onClose={handleClose} onContinue={handleContinue} />}
         </div>
          
