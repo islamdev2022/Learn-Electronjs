@@ -4,6 +4,13 @@ import Afficher from './Afficher';
 import AM from './AM';
 import Header from './Header';
 const Personnel = () => {
+
+
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleClose = () => {
+    setShowAlert(false);
+  };
     
     const [activeItem, setActiveItem] = useState(null);
 
@@ -16,7 +23,7 @@ const Personnel = () => {
       case 'item2':
         return <AM option="Ajouter" />;
       case 'item3':
-        return <AM option="Modifier" />;
+        return <AM option="Modifier" id={2}/>;
       case 'item4':
         return <Suprimer />;
       default:
@@ -42,13 +49,16 @@ const Personnel = () => {
             <img src="assets/lanalyse-des-donnees copy.png" alt="afficher" className="w-10"/>
             <h1 className="font-bold text-white text-xl">AFFICHER</h1>
         </li>
-        <li className={`flex items-center w-60 px-3 float-right gap-5 py-1 mb-2 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg ${activeItem === 'item2' ? 'bg-green-cyan' : ''}`} onClick={() => setActiveItem('item2')}>            <img src="assets/ajouter-un-utilisateur copy.png" alt="ajouter" className="w-10"/>
+        <li className={`flex items-center w-60 px-3 float-right gap-5 py-1 mb-2 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg ${activeItem === 'item2' ? 'bg-green-cyan' : ''}`} onClick={() => setActiveItem('item2')}>            
+        <img src="assets/ajouter-un-utilisateur copy.png" alt="ajouter" className="w-10"/>
             <h1 className="font-bold text-white text-xl">AJOUTER</h1>
         </li>
-        <li className={`flex items-center w-60 px-3 float-right gap-5 py-1 mb-2 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg ${activeItem === 'item3' ? 'bg-green-cyan' : ''}`} onClick={() => setActiveItem('item3')}>            <img src="assets/editer copy.png" alt="modifier" className="w-10"/>
+        <li className={`flex items-center w-60 px-3 float-right gap-5 py-1 mb-2 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg ${activeItem === 'item3' ? 'bg-green-cyan' : ''}`} onClick={() => setActiveItem('item3')}>            
+        <img src="assets/editer copy.png" alt="modifier" className="w-10"/>
             <h1 className="font-bold text-white text-xl">MODIFIER</h1>
         </li>
-        <li className={`flex items-center w-60 px-3 float-right gap-5 py-1 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg ${activeItem === 'item4' ? 'bg-green-cyan' : ''}`} onClick={() => setActiveItem('item4')}>            <img src="assets/supprimer copy.png" alt="supprimer" className="w-10"/>
+        <li className={`flex items-center w-60 px-3 float-right gap-5 py-1 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg ${activeItem === 'item4' ? 'bg-green-cyan' : ''}`} onClick={() => {setActiveItem('item4') }}>            
+        <img src="assets/supprimer copy.png" alt="supprimer" className="w-10"/>
             <h1 className="font-bold text-white text-xl">SUPPRIMER</h1>
         </li>
         </ul>

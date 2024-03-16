@@ -22,14 +22,14 @@ const handleSearch = (e) => {
   };
 
 
-    return (  <div className="flex h-fit mt-10 ml-5 items-center gap-[230px] w-fit">
+    return (  <div className="flex h-fit mt-10 ml-4 items-center gap-[240px] w-fit">
     <h1 className="text-3xl font-bold text-white bg-green-dark1 p-1 h-fit rounded-sm ">Laboratoire</h1>
-    <div className="h-10 flex gap-3">
+    <div className="h-10 flex gap-1">
     <label htmlFor="username " className="text-green-dark1 font-bold p-2 bg-white rounded-s-md">Rechercher  </label>
-    <input type="text" placeholder="id, nom ,... " className="p-4 font-bold rounded-e-md w-96 outline-none" value={searchTerm}
+    <input type="text" placeholder="id, nom ... " className="p-4 font-bold rounded-e-md w-96 outline-none" value={searchTerm}
     onChange={(e) => setSearchTerm(e.target.value)}/>
     <img src="assets/chercher copy.png" alt="" className="w-8 h-10 bg-transparent relative right-12 hover:cursor-pointer" onClick={handleSearch}/>
-    <img src="assets/notification copy (1).png" alt="notification" className='size-8 mt-1' />
+    <img src="assets/notification copy (1).png" alt="notification" className='size-8 mt-1 ml-5' />
     <div className="relative">
       <img
         src="assets/parametres-gear copy.png"
