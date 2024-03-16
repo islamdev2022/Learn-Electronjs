@@ -6,7 +6,7 @@
 //     TableHead,
 //     TableHeader,
 //     TableRow,
-//   } from "app/components/ui/table"
+//   } from "../@/components/ui/table"
   
 const Suprimer = () => {
     return ( 

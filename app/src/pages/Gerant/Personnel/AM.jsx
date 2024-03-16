@@ -1,31 +1,36 @@
 import { useState } from "react";
 
-const Ajouter = () => {
-    const [randomNumber, setRandomNumber] = useState('');
+const AM = ({option}) => {
+   
+        const [randomNumber, setRandomNumber] = useState('');
 
   const generateRandomNumber = () => {
     const min = 1000;
     const max = 10000;
     const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
     setRandomNumber(randomNum);
-  };
+  }
+    
     return (
     <div className="flex flex-col  ">
-    <p className="text-2xl text-green font-bold p-3">Ajouter un Nouveau utilisateur</p>
+        {option==="Ajouter" && <p className="text-2xl text-green font-bold p-3">Ajouter un Nouveau utilisateur</p>}
+        {option==="Modifier" && <p className="text-2xl text-green font-bold p-3">Modification</p>}
+    
   <form className="flex p-4 h-[550px] bg-zinc-200 rounded-lg justify-around ">
     <div className="flex flex-col gap-10 w-1/3">
         <div>
             <label htmlFor="text" className="flex ">Nom</label>
         <input className="border p-2 mr-2 rounded-md w-4/5 flex justify-start" type="text" placeholder="Nom" />
         </div>
-       <div>
+        {option ==='Ajouter' && <div>
         <label htmlFor="text" className="flex">Id</label>
          <div className="flex">
                 <input className="border p-2 mr-2 rounded-md w-1/3 justify-start text-center" type="text" placeholder="ID" value={randomNumber}
         onChange={(e) => setRandomNumber(e.target.value)}/>
                 <button className="bg-green text-white font-bold p-2 rounded-sm" onClick={generateRandomNumber}>Generer</button>
             </div>
-       </div>
+       </div>}
+       
            
             <div>
                 <label htmlFor="text" className="flex ">Sexe</label>
@@ -36,7 +41,9 @@ const Ajouter = () => {
   
             </div>
             <div className="flex gap-10">
-                <button type="submit" className=" p-2 bg-green rounded-sm text-white font-bold w-1/3 mt-32">Ajouter</button>
+                {option==="Ajouter" && <button type="submit" className=" p-2 bg-green rounded-sm text-white font-bold w-1/3 mt-32">Ajouter</button> } 
+                {option==="Modifier" && <button type="submit" className=" p-2 bg-green rounded-sm text-white font-bold w-1/3 mt-32">Modifier</button> } 
+
                 <button type="reset" className=" p-2 bg-white rounded-sm text-green font-bold w-1/3 mt-32">Anuller</button>
             </div>
             
@@ -67,4 +74,4 @@ const Ajouter = () => {
   </form></div>
 );}
 
-export default Ajouter;
+export default AM;
