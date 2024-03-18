@@ -1,14 +1,20 @@
 import { useState } from "react";
 import AlertModal from "../../AlertModal";
 
-const Header = () => {//possible an attribute to define where the header is used for search option
+const Header = ({option}) => {//possible an attribute to define where the header is used for search option
     const [searchTerm, setSearchTerm] = useState('');
     const [isHovered, setIsHovered] = useState(false);
-const handleSearch = (e) => {
+
+    // if (option==="personnel"){
+        const handleSearch = (e) => {
     e.preventDefault();
-    // Handle the search logic here
+    // Handle the search logic for personnel here (personel data base table)
     console.log(searchTerm);
   };
+    // }else if (option==="stock"){
+
+    // // }
+
 
   const [showAlert, setShowAlert] = useState(false);
 
@@ -28,8 +34,8 @@ const handleSearch = (e) => {
     <label htmlFor="username " className="text-green-dark1 font-bold p-2 bg-white rounded-s-md">Rechercher  </label>
     <input type="text" placeholder="id, nom ... " className="p-4 font-bold rounded-e-md w-96 outline-none" value={searchTerm}
     onChange={(e) => setSearchTerm(e.target.value)}/>
-    <img src="assets/chercher copy.png" alt="" className="w-8 h-10 bg-transparent relative right-12 hover:cursor-pointer" onClick={handleSearch}/>
-    <img src="assets/notification copy (1).png" alt="notification" className='size-8 mt-1 ml-5' />
+    <img src="assets/chercher copy.png" alt="" className="w-8 h-10 bg-transparent relative right-10 hover:cursor-pointer" onClick={handleSearch}/>
+    <img src="assets/notification copy (1).png" alt="notification" className='size-8 mt-1 ml-[30px]' />
     <div className="relative">
       <img
         src="assets/parametres-gear copy.png"

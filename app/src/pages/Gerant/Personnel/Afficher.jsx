@@ -6,6 +6,14 @@ const Afficher = () => {
   const rowData = [
     { id: 1, nom: 'Nom1', pre: 'Pre1' },
     // Add more objects for each row
+    { id: 2, nom: 'Nom2', pre: 'Pre2' },
+    { id: 3, nom: 'Nom3', pre: 'Pre3' },
+    { id: 4, nom: 'Nom4', pre: 'Pre4' },
+    { id: 5, nom: 'Nom5', pre: 'Pre5' },
+    { id: 6, nom: 'Nom6', pre: 'Pre6' },
+    { id: 7, nom: 'Nom7', pre: 'Pre7' }, 
+    { id: 8, nom: 'Nom8', pre: 'Pre8' },
+    { id: 9, nom: 'Nom9', pre: 'Pre9' },
   ];
   
 
@@ -23,12 +31,14 @@ const Afficher = () => {
     
 
   return (
-    <>
-    <div className="w-[1100px] flex gap-4 mt-12">
-      <div className="scrollbar-thumb-rounded-full bg-green h-[500px] rounded-b-2xl scrollbar-thumb-green-cyan overflow-y-scroll w-5/6">
+    <div className="flex flex-col">
+    <p className="text-2xl text-green font-bold relative top-3 ">List des Employee</p>
+    <div className="w-[1100px] flex gap-4 mt-16">
+      
+      <div className="scrollbar-thumb-rounded-full bg-green h-[500px] rounded-b-lg scrollbar-thumb-green-cyan overflow-y-scroll w-5/6">
         <table className="text-xl bg-green text-white rounded-b-lg w-[900px]">
           <tbody>
-            <tr className="h-10 fixed w-[901px] bg-green-cyan rounded-t-xl top-28">
+            <tr className="h-10 fixed w-[901.5px] bg-green-cyan rounded-t-lg top-[157PX]">
               <th className="w-20">#</th>
               <th className="w-[250px]">Nom</th>
               <th className="w-[250px]">Pre</th>
@@ -85,7 +95,7 @@ const Afficher = () => {
 </div>
 
     </div>
-    </>
+    </div>
      );
 }
 

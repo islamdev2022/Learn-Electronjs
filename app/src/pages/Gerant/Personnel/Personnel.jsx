@@ -12,7 +12,7 @@ const Personnel = () => {
     setShowAlert(false);
   };
     
-    const [activeItem, setActiveItem] = useState(null);
+    const [activeItem, setActiveItem] = useState('item1');
 
   
 
@@ -76,7 +76,7 @@ const Personnel = () => {
         </div> 
         <div className="w-2 h-screen ml-2 bg-green-dark1"></div>
         <div className="table h-fit mx-auto">
-            <Header></Header>
+            <Header option="personnel"></Header>
         <div className="w-[1100px] h-fit p-4">
         {/* Render the active component */}
         {renderComponent()}
