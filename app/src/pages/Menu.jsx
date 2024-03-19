@@ -8,20 +8,7 @@ const Menu = () => {
 
   
 
-  const renderComponent = () => {
-    switch (activeItem) {
-      case 'item1':
-        return <Afficher />;
-      case 'item2':
-        return <Ajouter />;
-      case 'item3':
-        return <Modifier />;
-      case 'item4':
-        return <Suprimer />;
-      default:
-        return <Afficher></Afficher>;
-    }
-  };
+  
     return ( 
     <>
     <div className="w-1/5">

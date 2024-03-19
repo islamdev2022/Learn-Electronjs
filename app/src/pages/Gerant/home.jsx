@@ -27,12 +27,15 @@ const Home = () => {
                     </div> 
             
             </div>
+            <Link to="comptabilite">
              <div className=" flex items-center justify-center h-64 w-56 bg-green-dark1 rounded-2xl hover:cursor-pointer">
                 <div> <img src="assets/comptabilite.png" width={100} alt="" className=" table mx-auto"/>
             <h1 className=" text-white text-lg font-bold mt-10">Comptabilitee</h1>
             </div> 
            
             </div>
+            </Link>
+            
             <Link to="/Personnel">
             <div className=" flex items-center justify-center h-64 w-56 bg-green-dark1 rounded-2xl hover:cursor-pointer"> 
             <div>

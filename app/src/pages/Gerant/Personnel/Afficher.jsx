@@ -1,7 +1,7 @@
 import { IoIosMan } from "react-icons/io";
 import { useState } from "react";
-import Suprimer from "./Suprimer";
-const Afficher = () => {
+
+const Afficher = ({onRowSelect}) => {
 
   const rowData = [
     { id: 1, nom: 'Nom1', pre: 'Pre1' },
@@ -22,11 +22,16 @@ const Afficher = () => {
     const handleRowClick = (row) => {
       const isSelected = selectedRows.includes(row.id);
       if (isSelected) {
-        setSelectedRows(selectedRows.filter(id => id !== row.id));
+        const newSelectedRows = selectedRows.filter(id => id !== row.id);
+        setSelectedRows(newSelectedRows);
+        onRowSelect(null, newSelectedRows.length); // No row is considered selected
       } else {
-        setSelectedRows([...selectedRows, row.id]);
+        const newSelectedRows = [...selectedRows, row.id];
+        setSelectedRows(newSelectedRows);
+        onRowSelect(row.id, newSelectedRows.length); // Pass the new length of selectedRows
         console.log(`Details: Nom: ${row.nom}, Pre: ${row.pre}, Id: ${row.id}`);
       }
+      console.log(selectedRows.length);
     };
     
 

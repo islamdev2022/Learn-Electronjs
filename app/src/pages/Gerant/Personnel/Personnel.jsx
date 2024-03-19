@@ -16,18 +16,27 @@ const Personnel = () => {
     
     const [activeItem, setActiveItem] = useState('item1');
 
-  
+  // Add state to track the selected row and its ID
+const [selectedRowId, setSelectedRowId] = useState(null);
+const [selectedDetails,setSelectedDetails]= useState(null)
+const [selectedRowCount, setSelectedRowCount] = useState(0)
+
+// Define a callback function to update the selected row ID
+const handleRowSelection = (id ,count) => {
+  setSelectedRowId(id);
+  setSelectedRowCount(count);
+};
 
   const renderComponent = () => {
     switch (activeItem) {
       case 'item1':
-        return <Afficher/>
+        return <Afficher onRowSelect={handleRowSelection}/>
       case 'item2':
         return <AM option="Ajouter" />;
       case 'item3':
-        return <AM option="Modifier" id={2}/>;
+        return <AM option="Modifier" id={selectedRowId} details={selectedDetails}/>;
       case 'item4':
-        return <Suprimer />;
+        return <Suprimer id={selectedRowId} />;
       default:
         return <Afficher></Afficher>;
     }
@@ -48,19 +57,27 @@ const Personnel = () => {
         <hr className='bg-white h-1'/>
         <h1 className='text-2xl font-bold text-white underline pt-3'>Personnel</h1>
         <ul className="pt-5">
-             <li className={`flex items-center w-60 px-3 float-right gap-5 mb-2 py-1 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg ${activeItem === 'item1' ? 'bg-green-cyan' : ''}`} onClick={() => setActiveItem('item1')}>
+             <li className={`flex items-center w-60 px-3 float-right gap-5 mb-2 py-1 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg 
+             ${activeItem === 'item1' ? 'bg-green-cyan' : ''}`} onClick={() => setActiveItem('item1')}>
             <img src="assets/lanalyse-des-donnees copy.png" alt="afficher" className="w-10"/>
             <h1 className="font-bold text-white text-xl">AFFICHER</h1>
         </li>
-        <li className={`flex items-center w-60 px-3 float-right gap-5 py-1 mb-2 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg ${activeItem === 'item2' ? 'bg-green-cyan' : ''}`} onClick={() => setActiveItem('item2')}>            
+        <li className={`flex items-center w-60 px-3 float-right gap-5 py-1 mb-2 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg 
+        ${activeItem === 'item2' ? 'bg-green-cyan' : ''}`} onClick={() => setActiveItem('item2')}>            
         <img src="assets/ajouter-un-utilisateur copy.png" alt="ajouter" className="w-10"/>
             <h1 className="font-bold text-white text-xl">AJOUTER</h1>
         </li>
-        <li className={`flex items-center w-60 px-3 float-right gap-5 py-1 mb-2 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg ${activeItem === 'item3' ? 'bg-green-cyan' : ''}`} onClick={() => setActiveItem('item3')}>            
+        
+           <li className={`flex items-center w-60 px-3 float-right gap-5 py-1 mb-2 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg 
+           ${activeItem === 'item3' ? ' bg-green-dark1' : ''} ${selectedRowId === null || selectedRowCount>1 ?' opacity-50 hover:cursor-not-allowed ' :''}`} 
+           onClick={() => {if(selectedRowId!=null && selectedRowCount==1) setActiveItem('item3')}}>            
         <img src="assets/editer copy.png" alt="modifier" className="w-10"/>
             <h1 className="font-bold text-white text-xl">MODIFIER</h1>
         </li>
-        <li className={`flex items-center w-60 px-3 float-right gap-5 py-1 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg ${activeItem === 'item4' ? 'bg-green-cyan' : ''}`} onClick={() => {setActiveItem('item4') }}>            
+        
+        
+        <li className={`flex items-center w-60 px-3 float-right gap-5 py-1 mb-2 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg 
+        ${activeItem === 'item4' ? 'bg-green-dark1' : ''} ${selectedRowId === null ?' opacity-50 hover:cursor-not-allowed ' :''}`} onClick={() => {if(selectedRowId!=null) setActiveItem('item4')}}>            
         <img src="assets/supprimer copy.png" alt="supprimer" className="w-10"/>
             <h1 className="font-bold text-white text-xl">SUPPRIMER</h1>
         </li>

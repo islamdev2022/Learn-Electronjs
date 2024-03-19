@@ -1,6 +1,7 @@
 import { useState } from "react";
+import Afficher from "./Afficher";
 
-const Supprimer = () => {
+const Supprimer = (id) => {
   // State to control the visibility of the modal
   const [isVisible, setIsVisible] = useState(true);
 
@@ -14,6 +15,7 @@ const Supprimer = () => {
   // Function to hide the modal without performing any action
   const handleCancel = () => {
     setIsVisible(false);
+    
   };
 
   // Do not render the component if it is not visible
@@ -31,7 +33,7 @@ const Supprimer = () => {
             Oui
           </button>
           <button
-            onClick={handleCancel}
+            onClick={<Afficher></Afficher>}
             className="bg-gray rounded-lg h-8 px-6 font-bold text-white"
           >
             Annuler

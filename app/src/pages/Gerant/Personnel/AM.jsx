@@ -62,7 +62,7 @@ const handleSubmit = (event) => {
                 <p className="hidden">{formData.id=randomNumber}</p>
             </div>
        </div>}
-       {option ==='Modifier'&& <div>
+       {option ==='Modifier' && <div>
         <label htmlFor="text" className="flex">Id</label>
          <div className="flex">
                 <input className="border p-2 mr-2 rounded-md w-1/3 justify-start text-center" type="text" value={id} disabled/>
