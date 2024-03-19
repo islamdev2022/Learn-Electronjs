@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Suprimer from './Suprimer';
 import Afficher from './Afficher';
 import AM from './AM';
 import Header from './Header';
+import { IoArrowBackSharp } from "react-icons/io5";
 const Personnel = () => {
 
 
@@ -33,6 +35,7 @@ const Personnel = () => {
     return ( 
     <div className="flex bg-gray-light">
         <div className="w-1/5 bg-gradient-to-t from-green-cyan1 to-green-dark1 h-screen rounded-e-2xl">
+       <Link to='/home'> <IoArrowBackSharp className="text-white text-3xl m-2 absolute"/></Link>
              <div className="">
             <div className=" h-48  flex justify-center ">
             <div className="mt-6">

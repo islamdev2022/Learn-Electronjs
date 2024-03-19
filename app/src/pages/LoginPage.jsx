@@ -12,14 +12,14 @@ const Login = () => {
   };
 
   return (
-    <div className="flex min-h-screen  bg-white"> 
-      <div className="flex flex-col w-full md:flex-row"> 
+    <div className="flex min-h-screen bg-gradient-to-t from-green-cyan1 to-green-dark1  bg-gray"> 
+      <div className="flex flex-col w-full md:flex-row "> 
       <img src="assets/logo logiciel.png" alt="" className='absolute w-10 -rotate-45 m-3'/>
      {/* <img src="assets/background.jpg" width={500} alt=""  /> */}
-     <div className='bg-gradient-to-t from-green-cyan1 to-green-dark1 w-1/3'></div>
+     <div className=' w-1/3'></div>
      <h1 className='text-white text-5xl absolute top-28 left-32'>Bienvenue !</h1>
      <img src="assets/logo.svg" alt="" width={600} className='absolute mt-24 ml-32 ' />
-        <div className="flex items-center justify-end w-full md:w-1/2 p-8">
+        <div className="flex items-center justify-center  w-2/3 bg-white rounded-s-2xl  p-8">
           <div className="max-w-md w-full">
             <h1 className='text-4xl relative bottom-28'>Connectez-vous</h1>
             <form onSubmit={handleSubmit} className="flex flex-col space-y-4">

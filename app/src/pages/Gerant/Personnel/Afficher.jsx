@@ -36,7 +36,7 @@ const Afficher = () => {
     <div className="w-[1100px] flex gap-4 mt-16">
       
       <div className="scrollbar-thumb-rounded-full bg-green h-[500px] rounded-b-lg scrollbar-thumb-green-cyan overflow-y-scroll w-5/6">
-        <table className="text-xl bg-green text-white rounded-b-lg w-[900px]">
+        <table className="text-xl bg-gradient-to-t to-green-cyan1 from-green-dark1 text-white rounded-b-lg w-[900px]">
           <tbody>
             <tr className="h-10 fixed w-[901.5px] bg-green-cyan rounded-t-lg top-[157PX]">
               <th className="w-20">#</th>
