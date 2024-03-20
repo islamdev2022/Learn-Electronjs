@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Suprimer from './Suprimer';
+import Suprimer from '../Personnel/Suprimer';
 import Afficher from '../Afficher';
 import AM from '../AM';
 import Header from '../../Header';
 import { IoArrowBackSharp } from "react-icons/io5";
-const Personnel = () => {
+const Stock = () => {
 
 
   const [showAlert, setShowAlert] = useState(false);
@@ -30,13 +30,13 @@ const handleRowSelection = (id ,count) => {
   const renderComponent = () => {
     switch (activeItem) {
       case 'item1':
-        return <Afficher onRowSelect={handleRowSelection} choice="Personnel"/>
+        return <Afficher onRowSelect={handleRowSelection} choice="Stock"/>
       case 'item2':
-        return <AM option="Ajouter" choice="Personnel"/>;
+        return <AM option="Ajouter" choice="Stock" />;
       case 'item3':
-        return <AM option="Modifier" id={selectedRowId} choice="Personnel"/>;
+        return <AM option="Modifier" id={selectedRowId} choice="Stock"/>;
       case 'item4':
-        return <Suprimer id={selectedRowId}/>;
+        return <Suprimer id={selectedRowId} />;
       default:
         return <Afficher></Afficher>;
     }
@@ -55,7 +55,7 @@ const handleRowSelection = (id ,count) => {
             
        <div className=" h-[417px] mt-2 flex-col justify-center">
         <hr className='bg-white h-1'/>
-        <h1 className='text-2xl font-bold text-white underline pt-3'>Personnel</h1>
+        <h1 className='text-2xl font-bold text-white underline pt-3'>Gestion de Stock</h1>
         <ul className="pt-5">
              <li className={`flex items-center w-60 px-3 float-right gap-5 mb-2 py-1 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg 
              ${activeItem === 'item1' ? 'bg-green-cyan' : ''}`} onClick={() => setActiveItem('item1')}>
@@ -70,7 +70,7 @@ const handleRowSelection = (id ,count) => {
         
            <li className={`flex items-center w-60 px-3 float-right gap-5 py-1 mb-2 hover:bg-green-cyan rounded-s-lg 
            ${activeItem === 'item3' ? ' bg-green-cyan' : ''} ${selectedRowId === null || selectedRowCount>1 ?' opacity-50 cursor-not-allowed ' :'cursor-pointer '}`} 
-           onClick={() => {if(selectedRowId!=null && selectedRowCount===1) setActiveItem('item3')}}>            
+           onClick={() => {if(selectedRowId!=null && selectedRowCount==1) setActiveItem('item3')}}>            
         <img src="assets/editer copy.png" alt="modifier" className="w-10"/>
             <h1 className="font-bold text-white text-xl">MODIFIER</h1>
         </li>
@@ -96,7 +96,7 @@ const handleRowSelection = (id ,count) => {
         </div> 
         <div className="w-2 h-screen ml-2 bg-green-dark1"></div>
         <div className="table h-fit mx-auto">
-            <Header choice="personnel"></Header>
+            <Header choice="stock"></Header>
         <div className="w-[1100px] h-fit p-4">
         {/* Render the active component */}
         {renderComponent()}
@@ -109,4 +109,4 @@ const handleRowSelection = (id ,count) => {
  </div> );
 }
  
-export default Personnel;
+export default Stock;

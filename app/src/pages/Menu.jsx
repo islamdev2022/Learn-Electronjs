@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Afficher from './Gerant/Personnel/Afficher';
+import Afficher from './Gerant/Afficher';
 import Modifier from './Gerant/Personnel/Modifier';
 import Suprimer from './Gerant/Personnel/Suprimer';
 import Ajouter from './Gerant/Personnel/Ajouter';

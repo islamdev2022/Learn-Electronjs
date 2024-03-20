@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const AM = ({option,id}) => {
+const AM = ({choice,option,id}) => {
 const initialState={}
 const [formData,setFormData]=useState({
   Nom:'',
@@ -44,8 +44,10 @@ const handleSubmit = (event) => {
     
     return (
     <div className="flex flex-col  ">
-        {option==="Ajouter" && <p className="text-2xl text-green font-bold p-3">Ajouter un Nouveau utilisateur</p>}
-        {option==="Modifier" && <p className="text-2xl text-green font-bold p-3">Modification</p>}
+  {choice ==="Personnel" && 
+  <>
+      {option==="Ajouter" && <p className="text-2xl text-green font-bold p-3">Ajouter un Nouveau utilisateur</p>}
+      {option==="Modifier" && <p className="text-2xl text-green font-bold p-3">Modification</p>}
     
   <form className="flex p-4 h-[550px] bg-zinc-200 rounded-lg justify-around " onSubmit={handleSubmit} onReset={handleReset}>
     <div className="flex flex-col gap-10 w-1/3">
@@ -110,7 +112,56 @@ const handleSubmit = (event) => {
     
     </div>
     
-  </form></div>
+  </form></>}
+  {choice ==="Stock" && 
+  <>
+      {option==="Ajouter" && <p className="text-2xl text-green font-bold p-3">Ajouter un Nouveau Produit</p>}
+      {option==="Modifier" && <p className="text-2xl text-green font-bold p-3">Modification</p>}
+    
+  <form className="flex p-4 h-[550px] bg-zinc-200 rounded-lg justify-around " onSubmit={handleSubmit} onReset={handleReset}>
+    <div className="flex flex-col gap-10 w-1/3">
+        <div>
+            <label htmlFor="text" className="flex ">Nom de Produit</label>
+        <input className="border p-2 mr-2 rounded-md w-4/5 flex justify-start" type="text" placeholder="Nom" name="Nom" value={formData.Nom} onChange={handleChange}/>
+        </div>
+        {option ==='Ajouter' && <div>
+        <label htmlFor="text" className="flex">QR Code</label>
+         <div className="flex">
+                <input className="border p-2 mr-2 rounded-md w-1/3 justify-start text-center" type="text" placeholder="ID" value={randomNumber}
+       disabled/>
+                <button className="bg-green text-white font-bold p-2 rounded-sm" onClick={generateRandomNumber} type="button">Generer</button>
+                <p className="hidden">{formData.id=randomNumber}</p>
+            </div>
+       </div>}
+       {option ==='Modifier' && <div>
+        <label htmlFor="text" className="flex">Id</label>
+         <div className="flex">
+                <input className="border p-2 mr-2 rounded-md w-1/3 justify-start text-center" type="text" value={id} disabled/>
+                <p className="hidden">{formData.id=id}</p>
+            </div>
+       </div>}
+            <div className="flex gap-10 mt-24">
+                {option==="Ajouter" && <button type="submit" className=" p-2 bg-green rounded-sm text-white font-bold w-1/3 mt-32" >Ajouter</button> } 
+                {option==="Modifier" && <button type="submit" className=" p-2 bg-green rounded-sm text-white font-bold w-1/3 mt-32">Modifier</button> } 
+
+                <button type="reset" className=" p-2 bg-white rounded-sm text-green font-bold w-1/3 mt-32">Anuller</button>
+            </div>
+            
+
+    </div>
+    
+    <div className="flex flex-col gap-10 w-1/3">
+        <div>
+            <label htmlFor="text" className="flex ">Quantite</label>
+    <input className="border p-2 mr-2 rounded-md w-4/5 flex justify-start" type="text" placeholder="N°" name="prenom" value={formData.prenom} onChange={handleChange}/>
+        </div>
+    
+    
+    </div>
+    
+  </form></>}
+  
+        </div>
 );}
 
 export default AM;

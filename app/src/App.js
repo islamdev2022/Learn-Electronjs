@@ -7,6 +7,7 @@ import Personnel from './pages/Gerant/Personnel/Personnel';
 
 import Login from './pages/LoginPage';
 import ExampleComponent from './components/exampleComponent';
+import Stock from './pages/Gerant/Stock/Stock';
 function App() {
   return (
     <div className="App">
@@ -15,6 +16,7 @@ function App() {
         <Route exact path="/" element={<Login />} />
          <Route path="/home" element={<Home/>}></Route>
          <Route path="/Personnel" element={<Personnel/>}> </Route>
+         <Route path='/Stock' element={<Stock/>} />
       </Routes>
      
 
