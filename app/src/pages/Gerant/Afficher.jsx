@@ -139,7 +139,7 @@ const Afficher = ({onRowSelect,choice}) => {
     <div>
     <div className="bg-green-dark1 h-40 w-40 rounded-2xl flex justify-center items-center flex-col">
     <IoIosMan className=" size-20 text-white"/>
-    <p className="text-white font-bold"><span>N°</span> Ytilisateurs</p>
+    <p className="text-white font-bold"><span>N°</span> Utilisateurs</p>
     </div>
     </div>
 </div>

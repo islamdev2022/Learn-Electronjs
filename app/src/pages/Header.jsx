@@ -51,7 +51,7 @@ const Header = ({choice}) => {//possible an attribute to define where the header
     { choice==="stock" && <IoIosSearch className="w-8 h-10 bg-transparent relative right-10 cursor-pointer text-green" onClick={handleSearchS}/>}
     { choice==="comptabilite" &&  <IoIosSearch className="w-8 h-10 bg-transparent relative right-10 cursor-pointer text-green" onClick={handleSearchC}/>}
     <img src="assets/notification copy (1).png" alt="notification" className='size-8 mt-1 ml-[30px]' />
-    <span className="absolute right-[134px] text-xs bg-red-600 text-white font-semibold h-4 w-3 justify-center items-center flex rounded-2xl">10</span>
+    <span className="text-xs relative right-4 bg-red-600 text-white font-semibold h-4 w-3 justify-center items-center flex rounded-2xl">1</span>
     <div className="relative">
       <img
         src="assets/parametres-gear copy.png"
