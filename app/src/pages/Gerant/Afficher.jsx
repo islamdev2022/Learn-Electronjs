@@ -55,13 +55,13 @@ const Afficher = ({onRowSelect,choice}) => {
             {rowData.map((row) => (
   <tr 
     key={row.id} 
-    className="h-16 cursor-pointer hover:bg-green-dark1" 
+    className="h-16 cursor-pointer hover:bg-green-dark1 border-2" 
     onClick={() => handleRowClick(row)}
   >
-    <th className="w-20">{row.N}</th>
-    <td className="w-[250px]">{row.nom}</td>
-    <td className="w-[250px]">{row.QRCode}</td>
-    <td className="w-[200px]">{row.Quantite}</td>
+    <th className="w-20 border-2">{row.N}</th>
+    <td className="w-[250px] border-2">{row.nom}</td>
+    <td className="w-[250px] border-2">{row.QRCode}</td>
+    <td className="w-[200px] border-2">{row.Quantite}</td>
     <td>
       <label className="flex justify-center items-center h-full w-full">
         <input
@@ -99,13 +99,13 @@ const Afficher = ({onRowSelect,choice}) => {
             {rowData.map((row) => (
   <tr 
     key={row.id} 
-    className="h-16 cursor-pointer hover:bg-green-dark1" 
+    className="h-16 cursor-pointer hover:bg-green-dark1 border-2" 
     onClick={() => handleRowClick(row)}
   >
-    <th className="w-20">{row.id}</th>
-    <td className="w-[250px]">{row.nom}</td>
-    <td className="w-[250px]">{row.pre}</td>
-    <td className="w-[200px]">{row.role}</td>
+    <th className="w-20 border-2">{row.id}</th>
+    <td className="w-[250px] border-2">{row.nom}</td>
+    <td className="w-[250px] border-2">{row.pre}</td>
+    <td className="w-[200px] border-2">{row.role}</td>
     <td>
       <label className="flex justify-center items-center h-full w-full">
         <input

@@ -134,7 +134,7 @@ const handleSubmit = (event) => {
             </div>
        </div>}
        {option ==='Modifier' && <div>
-        <label htmlFor="text" className="flex">Id</label>
+        <label htmlFor="text" className="flex">QR Code</label>
          <div className="flex">
                 <input className="border p-2 mr-2 rounded-md w-1/3 justify-start text-center" type="text" value={id} disabled/>
                 <p className="hidden">{formData.id=id}</p>

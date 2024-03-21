@@ -45,15 +45,15 @@ const handleRowSelection = (id ,count) => {
     <div className="flex bg-gray-light">
         <div className="w-1/5 bg-gradient-to-t from-green-cyan1 to-green-dark1 h-screen rounded-e-2xl">
        <Link to='/home'> <IoArrowBackSharp className="text-white text-3xl m-2 absolute"/></Link>
-             <div className="">
-            <div className=" h-48  flex justify-center ">
+             <div className="h-screen">
+            <div className=" h-1/4  flex justify-center ">
             <div className="mt-6">
             <img src="assets/compte.png" alt="profile" className="w-28 h-28 "/>
             <h1 className="font-bold text-white">GERANT</h1>
             </div>
             </div>
             
-       <div className=" h-[417px] mt-2 flex-col justify-center">
+       <div className=" h-2/4 mt-2 flex-col justify-center">
         <hr className='bg-white h-1'/>
         <h1 className='text-2xl font-bold text-white underline pt-3'>Gestion de Stock</h1>
         <ul className="pt-5">
@@ -85,7 +85,7 @@ const handleRowSelection = (id ,count) => {
        
        </div>
        <hr className='bg-white h-1'/>
-       <div className="  flex justify-center mt-2 rounded-ee-2xl items-center ">
+       <div className=" h-1/4 flex justify-center mt-2 rounded-ee-2xl items-center ">
         <div className=" py-3">
             <img src="assets/logo logiciel.png" alt="logo"  className="w-16 -rotate-45 ml-2 mb-2"/>
             <p className="text-white font-bold">Version 1.0</p>
