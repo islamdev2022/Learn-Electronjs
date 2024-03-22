@@ -98,9 +98,9 @@ const handleRowSelection = (id ,count) => {
         </div> 
         </div> 
         <div className="w-2 h-screen ml-2 bg-green-dark1"></div>
-        <div className="table h-fit mx-auto">
+        <div className="table w-fit h-fit mx-auto">
             <Header choice="personnel"></Header>
-        <div className=" w-full p-4">
+        <div className=" w-[1100px] p-4">
         {/* Render the active component */}
         {renderComponent()}
       </div>

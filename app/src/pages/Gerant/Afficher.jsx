@@ -39,7 +39,7 @@ const Afficher = ({onRowSelect,choice}) => {
   
     <div className="flex flex-col">
     {choice==="Stock" && <><p className="text-2xl text-green font-bold relative top-3 ">List des Produit</p>
-    <div className="w-[1100px] flex gap-4 mt-16">
+    <div className="w-[1100px] flex  mt-16">
       
       <div className="scrollbar-thumb-rounded-full bg-green h-[500px] rounded-b-lg scrollbar-thumb-green-cyan overflow-y-scroll w-5/6">
         <table className="text-xl bg-gradient-to-t to-green-cyan1 from-green-dark1 text-white rounded-b-lg w-[900px] ">
@@ -102,7 +102,7 @@ const Afficher = ({onRowSelect,choice}) => {
     className="h-16 cursor-pointer hover:bg-green-dark1 border-2" 
     onClick={() => handleRowClick(row)}
   >
-    <th className="w-20 border-2">{row.id}</th>
+    <th className="w-20 border-2">{row.N}</th>
     <td className="w-[250px] border-2">{row.nom}</td>
     <td className="w-[250px] border-2">{row.pre}</td>
     <td className="w-[200px] border-2">{row.role}</td>
@@ -110,7 +110,7 @@ const Afficher = ({onRowSelect,choice}) => {
       <label className="flex justify-center items-center h-full w-full">
         <input
           type="checkbox"
-          checked={selectedRows.includes(row.id)}
+          checked={selectedRows.includes(row.N)}
           onChange={() => handleRowClick(row)}
           className="h-6 w-6 border border-gray-300 rounded-md checked:bg-blue-500 checked:border-transparent focus:outline-none cursor-pointer"
         />

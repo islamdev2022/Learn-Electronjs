@@ -21,7 +21,7 @@ const Home = () => {
 </div>
        <div className="">
         <div className=" flex justify-center gap-16 h-screen items-center  ">
-          <Link to="/Stock"><div className="flex items-center justify-center h-64 w-56 bg-green-dark1 rounded-2xl hover:cursor-pointer">
+          <Link to="/home/Stock"><div className="flex items-center justify-center h-64 w-56 bg-green-dark1 rounded-2xl hover:cursor-pointer">
                 <div><img src="assets/en-stock.png" width={100} alt="" className=""/>
             <h1 className=" text-white text-lg font-bold mt-10">Stock</h1>
                     </div> 
@@ -29,7 +29,7 @@ const Home = () => {
             </div>
           </Link>
             
-            <Link to="/comptabilite">
+            <Link to="/home/Comptabilite">
              <div className=" flex items-center justify-center h-64 w-56 bg-green-dark1 rounded-2xl hover:cursor-pointer">
                 <div> <img src="assets/comptabilite.png" width={100} alt="" className=" table mx-auto"/>
             <h1 className=" text-white text-lg font-bold mt-10">Comptabilitee</h1>
@@ -38,7 +38,7 @@ const Home = () => {
             </div>
             </Link>
             
-            <Link to="/Personnel">
+            <Link to="/home/Personnel">
             <div className=" flex items-center justify-center h-64 w-56 bg-green-dark1 rounded-2xl hover:cursor-pointer"> 
             <div>
                  <img src="assets/personnel.png" width={100} alt="" className=""/>

@@ -35,7 +35,7 @@ const Header = ({choice}) => {//possible an attribute to define where the header
   };
 
 
-    return (  <div className={`flex h-fit mt-10 ml-4 items-center  ${choice==="stock" ? 'gap-[225px]' : 'gap-[112px]'} w-fit`}>
+    return (  <div className={`flex h-fit mt-10 ml-4 items-center  ${choice==="stock" || choice==="comptabilite"? 'gap-[225px]' : 'gap-[112px]'} w-fit`}>
     <h1 className="text-3xl font-bold text-white bg-green-dark1 p-1 h-fit rounded-sm px-3 ">Laboratoire</h1>
     <div className="h-10 flex gap-1">
       {choice === "personnel" && <> <select  className="rounded-s-md font-semibold text-green outline-none">
@@ -44,7 +44,7 @@ const Header = ({choice}) => {//possible an attribute to define where the header
         <option value="recepcionist">Respetionist</option>
 
         </select></>}
-    <label htmlFor="username " className={`text-green-dark1 font-bold p-2 bg-white ${choice==="stock" ? 'rounded-s-sm' : ''}`}>Rechercher  </label>
+    <label htmlFor="username " className={`text-green-dark1 font-bold p-2 bg-white ${choice==="stock" || choice==="comptabilite" ? 'rounded-s-sm' : ''}`}>Rechercher  </label>
     <input type="text" placeholder="id, nom ... " className="p-4 font-bold rounded-e-md w-96 outline-none" value={searchTerm}
     onChange={(e) => setSearchTerm(e.target.value)}/>
     { choice==="personnel" &&  <IoIosSearch className="w-8 h-10 bg-transparent relative right-10 cursor-pointer text-green" onClick={handleSearchP}/>}
@@ -56,7 +56,7 @@ const Header = ({choice}) => {//possible an attribute to define where the header
       <img
         src="assets/parametres-gear copy.png"
         alt="parameter"
-        className="ml-8 mt-1 hover:cursor-pointer size-8"
+        className="ml-2 mt-1 hover:cursor-pointer size-8"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       />
