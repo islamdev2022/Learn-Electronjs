@@ -69,7 +69,7 @@ const Graph = () => {
         <div className="flex h-full">
           <div className="flex flex-col justify-center items-center p-6 border-e-2 gap-3">
             <p className="font-bold underline">Time Frame</p>
-            <select className="rounded-lg p-1 px-2 outline">
+            <select className="rounded-lg p-1 px-2 outline ">
               <option value="" >year</option>
               <option value={2023}>2023</option>
               <option value={2024}>2024</option>
@@ -78,7 +78,7 @@ const Graph = () => {
               <option value={2024}>2024</option>
                </select>
           </div>
-          <div className="p-6">
+          <div className="p-5">
             <p className="font-bold underline">Number of Tests</p>
           <br />
           <span className="flex justify-start">100</span>

@@ -7,6 +7,8 @@ import Graph from './Graph';
 
 import Header from '../../Header';
 import { IoArrowBackSharp } from "react-icons/io5";
+import CalculerR from './CalculerR';
+import GererS from './GererS';
 const Comptabilite = () => {
 
 
@@ -34,9 +36,9 @@ const handleRowSelection = (id ,count) => {
       case 'item1':
         return <Graph></Graph>
       case 'item2':
-        return <AM option="Ajouter" choice="Personnel"/>;
+        return <CalculerR/>
       case 'item3':
-        return <AM option="Modifier" id={selectedRowId} choice="Personnel"/>;
+        return <GererS onRowSelect={handleRowSelection}/>
       case 'item4':
         return <Suprimer id={selectedRowId}/>;
       default:
@@ -72,15 +74,15 @@ const handleRowSelection = (id ,count) => {
         </li>
         
            <li className={`flex items-center w-60 px-3 float-right gap-5 py-1 mb-2 hover:bg-green-cyan rounded-s-lg 
-           ${activeItem === 'item3' ? ' bg-green-cyan' : ''} ${selectedRowId === null || selectedRowCount>1 ?' opacity-50 cursor-not-allowed ' :'cursor-pointer '}`} 
-           onClick={() => {if(selectedRowId!=null && selectedRowCount===1) setActiveItem('item3')}}>            
+           ${activeItem === 'item3' ? ' bg-green-cyan' : ''} cursor-pointer`} 
+           onClick={() => {setActiveItem('item3')}}>            
         <img src="assets/editer copy.png" alt="modifier" className="w-10"/>
             <h1 className="font-bold text-white text-xl">Gerer Salleries</h1>
         </li>
         
         
-        <li className={`flex items-center w-60 px-3 float-right gap-5 py-1 mb-2 hover:bg-green-cyan rounded-s-lg 
-        ${activeItem === 'item4' ? 'bg-green-cyan' : ''} ${selectedRowId === null ?' opacity-50 cursor-not-allowed ' :'cursor-pointer '}`} onClick={() => {if(selectedRowId!=null) setActiveItem('item4')}}>            
+        <li className={`flex items-center w-60 px-2 float-right gap-5 py-1 mb-2 hover:bg-green-cyan rounded-s-lg 
+        ${activeItem === 'item4' ? 'bg-green-cyan' : ''} cursor-pointer`} onClick={() => {setActiveItem('item4')}}>            
         <img src="assets/supprimer copy.png" alt="supprimer" className="w-10"/>
             <h1 className="font-bold text-white text-xl">Gere Les Factures</h1>
         </li>
@@ -100,7 +102,7 @@ const handleRowSelection = (id ,count) => {
         <div className="w-2 h-screen ml-2 bg-green-dark1"></div>
         <div className="table h-screen mx-auto ">
             <Header choice="comptabilite"></Header>
-        <div className="w-[1100px]  px-4">
+        <div className="w-[1100px] px-4 pt-4 ">
         {/* Render the active component */}
         {renderComponent()}
       </div>
