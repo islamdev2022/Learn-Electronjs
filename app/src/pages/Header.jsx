@@ -70,7 +70,7 @@ const Header = ({choice}) => {//possible an attribute to define where the header
           Deconexion
         </button>
         
-      )} {showAlert && <AlertModal onClose={handleClose} onContinue={handleContinue} />}
+      )} {showAlert && <AlertModal option="deconnecter" onClose={handleClose} onContinue={handleContinue} />}
     </div>
 
     </div>

@@ -2,8 +2,11 @@ import { IoIosMan } from "react-icons/io";
 import { useState } from "react";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import { FaCheck } from "react-icons/fa";
+import { BiCommentAdd } from "react-icons/bi";
+import { TbArrowsLeftRight } from "react-icons/tb";
 import EditS from "../Gerant/Comptabilite/EditS";
-
+import AlertModal from "../AlertModal";
 const Resultats = ({ onRowSelect }) => {
     const rowData = [
       { N: 1, nom: "Nom1", QRCode: "Pre1", Quantite: "Bio" },
@@ -21,6 +24,18 @@ const Resultats = ({ onRowSelect }) => {
     const [editMode, setEditMode] = useState({ active: false, rowId: null });
     const [selectedRows, setSelectedRows] = useState([]);
     const [selectAll, setSelectAll] = useState(false);
+    const [showAlertNT, setShowAlertNT] = useState(false);
+    const [showAlertVA, setShowAlertVA] = useState(false);
+    const handleClose = () => {
+        setShowAlertNT(false);
+        setShowAlertVA(false)
+      };
+    
+      const handleContinue = () => {
+        // Add logic to proceed with the action
+        
+      };
+
 
     const toggleSelectAll = () => {
         if (selectAll) {
@@ -55,29 +70,31 @@ const Resultats = ({ onRowSelect }) => {
     }
   
     return (
-      <div className="flex flex-col">
+      <div className="flex flex-col items-center">
         <p className="text-2xl text-green font-bold relative top-3 ">List des Analyse</p>
-      <div className="w-[1100px] flex mt-16">
-        <div className="scrollbar-thumb-rounded-full bg-white h-[500px] rounded-b-lg scrollbar-thumb-green-cyan overflow-y-scroll w-5/6">
-          <table className="text-xl bg-gradient-to-t text-slate-500 font-semibold rounded-b-lg w-[900px] ">
+      <div className="w-full flex mt-10">
+        <div className="scrollbar-thumb-rounded-full bg-white h-[32rem] rounded-l-lg scrollbar-thumb-green-cyan overflow-y-scroll w-full">
+          <table className="text-xl bg-gradient-to-t text-slate-500 font-semibold rounded-tl-lg w-full ">
             <thead>
-              <tr className="h-10 fixed w-[901.5px] bg-green-cyan rounded-t-lg top-[157px]">
-                <th className="w-20">
+              <tr className="h-10 sticky top-0 w-fit bg-green-cyan rounded-lg">
+                <th className="w-1/12 rounded-tl-lg">
                   <input
                     type="checkbox"
                     checked={selectAll}
                     onChange={toggleSelectAll}
                   />
                 </th>
-                <th className="w-[250px]">Nom Employe</th>
-                <th className="w-[250px]">Profession</th>
-                <th className="w-[200px]">Salaire</th>
-                <th className="w-[120px]">Action</th>
+                <th className="w-2/12">Nom</th>
+                <th className="w-2/12">Prenom</th>
+                <th className="w-1/12">Age</th>
+                <th className="w-1/12">id</th>
+                <th className="w-2/12">Date</th>
+                <th className="w-2/12">Action</th>
               </tr>
             </thead>
             <tbody>
               {rowData.map((row, index) => (
-                <tr key={index} className="h-16 cursor-pointer hover:bg-slate-200 border-2" onClick={() => handleRowClick(row.N)}>
+                <tr key={index} className="h-16 cursor-pointer hover:bg-slate-200 border-y" onClick={() => handleRowClick(row.N)}>
                   <td>
                     <input
                       type="checkbox"
@@ -85,14 +102,20 @@ const Resultats = ({ onRowSelect }) => {
                       onChange={() => handleRowClick(row.N)}
                     />
                   </td>
-                    <td className="w-[250px] border-2">{row.nom}</td>
-                    <td className="w-[250px] border-2">{row.QRCode}</td>
-                    <td className="w-[200px] border-2">{row.Quantite}</td>
+                    <td >{row.nom}</td>
+                    <td >{row.QRCode}</td>
+                    <td >{row.Quantite}</td>
+                    <td></td>
+                    <td></td>
                   <td>
                     <label htmlFor="" className="flex justify-evenly items-center h-full w-full">
-                    <FaEdit    className=" cursor-pointer" onClick={() => setEditMode({ active: true, rowId: row.N })} />
-                    <MdDelete   className=" cursor-pointer" onClick={() => {/* handleDelete function */}} /></label>
-                    
+                    <BiCommentAdd className=" cursor-pointer" />
+                    <TbArrowsLeftRight className=" cursor-pointer" onClick={() => setShowAlertNT(true)}/>
+                    <FaCheck className=" cursor-pointer" onClick={() => setShowAlertVA(true)}/>
+                    {showAlertNT && <AlertModal option="nvtest" onClose={handleClose} onContinue={handleContinue} />}
+                    {showAlertVA && <AlertModal option="valider" onClose={handleClose} onContinue={handleContinue} />}
+
+                    </label>
                   </td>
                 </tr>
               ))}
