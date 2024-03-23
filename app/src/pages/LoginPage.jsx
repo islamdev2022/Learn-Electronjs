@@ -48,7 +48,7 @@ const Login = () => {
                 />
               </div>
               <div className="flex items-center justify-center mb-20">
-                <Link to="/home"><button
+                <Link to="/medcine"><button
                   className=" bg-green-dark1 text-lg text-white font-bold py-3 mt-10 rounded-lg w-44 focus:outline-none focus:shadow-outline"
                   type="submit">Se connecter</button>
                 </Link>

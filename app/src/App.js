@@ -9,6 +9,7 @@ import Login from './pages/LoginPage';
 import ExampleComponent from './components/exampleComponent';
 import Stock from './pages/Gerant/Stock/Stock';
 import Comptabilite from './pages/Gerant/Comptabilite/Comptabilite';
+import Medcine from './pages/Medcine/Medcine';
 function App() {
   return (
     <div className="App">
@@ -19,6 +20,7 @@ function App() {
          <Route path="/home/Personnel" element={<Personnel/>}/>
          <Route path='/home/Stock' element={<Stock/>} />
          <Route path="/home/comptabilite" element={<Comptabilite/>}/>
+         <Route path="/medcine" element={<Medcine/>} />
       </Routes>
      
 

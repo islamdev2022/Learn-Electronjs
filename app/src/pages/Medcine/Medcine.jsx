@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Suprimer from '../Personnel/Suprimer';
-import { Button } from '../../../components/ui/button';
-import AM from '../AM';
-import Graph from './Graph';
-
-import Header from '../../Header';
+import Resultats from './Resultats';
 import { IoArrowBackSharp } from "react-icons/io5";
-import CalculerR from './CalculerR';
-import GererS from './GererS';
-const Comptabilite = () => {
+import { GrNotes } from "react-icons/gr";
+import { FaDropbox } from "react-icons/fa";
+import Header from '../Header';
+const Medcine = () => {
 
 
   const [showAlert, setShowAlert] = useState(false);
@@ -34,15 +30,15 @@ const handleRowSelection = (id ,count) => {
   const renderComponent = () => {
     switch (activeItem) {
       case 'item1':
-        return <Graph></Graph>
+        return <Resultats></Resultats>
       case 'item2':
-        return <CalculerR/>
+        return 
       case 'item3':
-        return <GererS onRowSelect={handleRowSelection}/>
+        return 
       case 'item4':
         return 
       default:
-        return <Graph></Graph>
+        return <Resultats></Resultats>
     }
   };
     return ( 
@@ -53,40 +49,26 @@ const handleRowSelection = (id ,count) => {
             <div className=" h-1/4  flex justify-center ">
             <div className="mt-6">
             <img src="assets/compte.png" alt="profile" className="w-28 h-28 "/>
-            <h1 className="font-bold text-white">GERANT</h1>
+            <h1 className="font-bold text-white">Medcine</h1>
             
             </div>
             </div>
             
        <div className=" h-2/4  flex-col justify-center">
         <hr className='bg-white h-1'/>
-        <h1 className='text-2xl font-bold text-white underline pt-3'>Gestion Comptabilite</h1>
         <ul className="pt-5">
-             <li className={`flex items-center w-60 px-3 float-right gap-5 mb-2 py-1 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg 
+             <li className={`flex items-center w-60 px-3 float-right gap-5 mb-2 py-2 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg 
              ${activeItem === 'item1' ? 'bg-green-cyan' : ''}`} onClick={() => setActiveItem('item1')}>
-            <img src="assets/lanalyse-des-donnees copy.png" alt="afficher" className="w-10"/>
-            <h1 className="font-bold text-white text-xl">Statistics</h1>
+            <GrNotes className='w-10 text-white size-7' />
+            <h1 className="font-bold text-white text-xl">Resultats</h1>
         </li>
-        <li className={`flex items-center w-60 px-3 float-right gap-5 py-1 mb-2 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg 
+        <li className={`flex items-center w-60 px-3 float-right gap-5 py-2 mb-2 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg 
         ${activeItem === 'item2' ? 'bg-green-cyan' : ''}`} onClick={() => setActiveItem('item2')}>            
-        <img src="assets/ajouter-un-utilisateur copy.png" alt="ajouter" className="w-10"/>
-            <h1 className="font-bold text-white text-xl">Calculer Revenu</h1>
+        <FaDropbox className='w-10 text-white size-7'/>
+            <h1 className="font-bold text-white text-xl">Produits</h1>
         </li>
         
-           <li className={`flex items-center w-60 px-3 float-right gap-5 py-1 mb-2 hover:bg-green-cyan rounded-s-lg 
-           ${activeItem === 'item3' ? ' bg-green-cyan' : ''} cursor-pointer`} 
-           onClick={() => {setActiveItem('item3')}}>            
-        <img src="assets/editer copy.png" alt="modifier" className="w-10"/>
-            <h1 className="font-bold text-white text-xl">Gerer Salleries</h1>
-        </li>
-        
-        
-        <li className={`flex items-center w-60 px-2 float-right gap-5 py-1 mb-2 hover:bg-green-cyan rounded-s-lg 
-        ${activeItem === 'item4' ? 'bg-green-cyan' : ''} cursor-pointer`} onClick={() => {setActiveItem('item4')}}>            
-        <img src="assets/supprimer copy.png" alt="supprimer" className="w-10"/>
-            <h1 className="font-bold text-white text-xl">Gere Les Factures</h1>
-        </li>
-        </ul>
+           </ul>
        
        </div>
        <hr className='bg-white h-1'/>
@@ -114,4 +96,4 @@ const handleRowSelection = (id ,count) => {
  </div> );
 }
  
-export default Comptabilite;
+export default Medcine;
