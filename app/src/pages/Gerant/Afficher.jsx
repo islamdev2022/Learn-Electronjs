@@ -37,19 +37,20 @@ const Afficher = ({onRowSelect,choice}) => {
 
   return (
   
-    <div className="flex flex-col">
-    {choice==="Stock" && <><p className="text-2xl text-green font-bold relative top-3 ">List des Produit</p>
-    <div className="w-[1100px] flex  mt-16">
+    <div className="flex flex-col ">
+    {choice==="Stock" && <>
+    <p className="text-2xl text-green font-bold relative top-3 ">List des Produit</p>
+    <div className="w-full flex mt-12">
       
-      <div className="scrollbar-thumb-rounded-full bg-green h-[500px] rounded-b-lg scrollbar-thumb-green-cyan overflow-y-scroll w-5/6">
-        <table className="text-xl bg-gradient-to-t to-green-cyan1 from-green-dark1 text-white rounded-b-lg w-[900px] ">
+      <div className="scrollbar-thumb-rounded-full h-[32rem] rounded-l-lg scrollbar-thumb-green-cyan overflow-y-scroll w-10/12">
+        <table className="text-xl bg-gradient-to-t to-green-cyan1 from-green-dark1 text-white rounded-b-lg w-full ">
           <tbody>
-            <tr className="h-10 fixed w-[901.5px] bg-green-cyan rounded-t-lg top-[157PX]">
-              <th className="w-20">#</th>
-              <th className="w-[250px]">Nom Produit</th>
-              <th className="w-[250px]">Qr Code</th>
-              <th className="w-[200px]">Quantite</th>
-              <th className="w-[120px]">Select</th>
+          <tr className="h-10 sticky top-0 w-fit bg-green-cyan rounded-lg">
+              <th className=" w-1/12 rounded-tl-lg">#</th>
+              <th className="w-1/5">Nom Produit</th>
+              <th className="w-1/5">Qr Code</th>
+              <th className="w-1/5">Quantite</th>
+              <th className="w-1/5">Select</th>
             </tr>
 
             {rowData.map((row) => (
@@ -58,10 +59,10 @@ const Afficher = ({onRowSelect,choice}) => {
     className="h-16 cursor-pointer hover:bg-green-dark1 border-2" 
     onClick={() => handleRowClick(row)}
   >
-    <th className="w-20 border-2">{row.N}</th>
-    <td className="w-[250px] border-2">{row.nom}</td>
-    <td className="w-[250px] border-2">{row.QRCode}</td>
-    <td className="w-[200px] border-2">{row.Quantite}</td>
+    <th >{row.N}</th>
+    <td >{row.nom}</td>
+    <td >{row.QRCode}</td>
+    <td >{row.Quantite}</td>
     <td>
       <label className="flex justify-center items-center h-full w-full">
         <input
@@ -83,17 +84,17 @@ const Afficher = ({onRowSelect,choice}) => {
 
     </div></>}
     {choice==="Personnel" && <><p className="text-2xl text-green font-bold relative top-3 ">List des Utilisateurs</p>
-    <div className="w-[1100px] flex gap-4 mt-16">
+    <div className="w-full flex gap-4 mt-12">
       
-      <div className="scrollbar-thumb-rounded-full bg-green h-[500px] rounded-b-lg scrollbar-thumb-green-cyan overflow-y-scroll w-5/6">
-        <table className="text-xl bg-gradient-to-t to-green-cyan1 from-green-dark1 text-white rounded-b-lg w-[900px]">
+      <div className="scrollbar-thumb-rounded-full bg-green h-[32rem] rounded-l-lg scrollbar-thumb-green-cyan overflow-y-scroll w-full">
+        <table className="text-xl bg-gradient-to-t to-green-cyan1 from-green-dark1 text-white rounded-b-lg w-full">
           <tbody>
-            <tr className="h-10 fixed w-[901.5px] bg-green-cyan rounded-t-lg top-[157PX]">
-              <th className="w-20">ID</th>
-              <th className="w-[250px]">Nom</th>
-              <th className="w-[250px]">Prenom</th>
-              <th className="w-[200px]">Role</th>
-              <th className="w-[120px]">Select</th>
+            <tr className="h-10 sticky top-0 w-fit bg-green-cyan rounded-lg ">
+              <th className="w-1/12 rounded-tl-lg">ID</th>
+              <th className="w-1/5">Nom</th>
+              <th className="w-1/5">Prenom</th>
+              <th className="w-1/5">Role</th>
+              <th className="w-1/5">Select</th>
             </tr>
 
             {rowData.map((row) => (
@@ -102,10 +103,10 @@ const Afficher = ({onRowSelect,choice}) => {
     className="h-16 cursor-pointer hover:bg-green-dark1 border-2" 
     onClick={() => handleRowClick(row)}
   >
-    <th className="w-20 border-2">{row.N}</th>
-    <td className="w-[250px] border-2">{row.nom}</td>
-    <td className="w-[250px] border-2">{row.pre}</td>
-    <td className="w-[200px] border-2">{row.role}</td>
+    <th >{row.N}</th>
+    <td >{row.nom}</td>
+    <td>{row.pre}</td>
+    <td >{row.role}</td>
     <td>
       <label className="flex justify-center items-center h-full w-full">
         <input
@@ -125,7 +126,7 @@ const Afficher = ({onRowSelect,choice}) => {
         </table>
 </div>
 
-<div className="flex flex-col relative bottom-4 gap-4">
+<div className="flex flex-col relative  gap-3">
     <div className="bg-green-cyan h-40 w-40 rounded-2xl flex justify-center items-center flex-col">
     <IoIosMan className=" size-20 text-white"/>
     <p className="text-white font-bold"><span>N°</span> Biologist</p>

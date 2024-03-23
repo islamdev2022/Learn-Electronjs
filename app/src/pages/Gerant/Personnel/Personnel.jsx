@@ -87,7 +87,7 @@ const handleRowSelection = (id ,count) => {
         </ul>
        
        </div>
-       <hr className='bg-white h-1'/>
+       <hr className='bg-white h-1 w-1/5 absolute'/>
        <div className=" h-1/4 flex justify-center rounded-ee-2xl items-center ">
         <div className=" py-3">
             <img src="assets/logo logiciel.png" alt="logo"  className="w-16 -rotate-45 ml-2 mb-2"/>
@@ -98,9 +98,9 @@ const handleRowSelection = (id ,count) => {
         </div> 
         </div> 
         <div className="w-2 h-screen ml-2 bg-green-dark1"></div>
-        <div className="table w-fit h-fit mx-auto">
+        <div className="table h-screen mx-auto">
             <Header choice="personnel"></Header>
-        <div className=" w-[1100px] p-4">
+            <div className="w-full px-4 pt-4 ">
         {/* Render the active component */}
         {renderComponent()}
       </div>

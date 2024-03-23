@@ -51,20 +51,20 @@ const GererS = ({ onRowSelect }) => {
   }
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col items-center">
       <p className="text-2xl text-green font-bold relative top-3 ">
         List des Salaires
       </p>
-      <div className="w-[1100px] flex  mt-16">
-        <div className="scrollbar-thumb-rounded-full bg-green h-[500px] rounded-b-lg scrollbar-thumb-green-cyan overflow-y-scroll w-5/6">
-          <table className="text-xl bg-gradient-to-t to-green-cyan1 from-green-dark1 text-white rounded-b-lg w-[900px] ">
+      <div className="w-full flex  mt-10">
+        <div className="scrollbar-thumb-rounded-full bg-green h-[32rem] rounded-l-lg scrollbar-thumb-green-cyan overflow-y-scroll w-10/12">
+          <table className="text-xl bg-gradient-to-t to-green-cyan1 from-green-dark1 text-white rounded-b-lg w-full ">
             <tbody>
-              <tr className="h-10 fixed w-[901.5px] bg-green-cyan rounded-t-lg top-[157PX]">
-                <th className="w-20">#</th>
-                <th className="w-[250px]">Nom Employe</th>
-                <th className="w-[250px]">Profession</th>
-                <th className="w-[200px]">Salaire</th>
-                <th className="w-[120px]">Action</th>
+            <tr className="h-10 sticky top-0 w-fit bg-green-cyan rounded-lg">
+            <th className=" w-1/12 rounded-tl-lg">#</th>
+                <th className="w-1/5">Nom Employe</th>
+              <th className="w-1/5">Profession</th>
+                <th className="w-1/5">Salaire</th>
+                <th className="w-1/5">Action</th>
               </tr>
 
               {rowData.map((row) => (
@@ -73,12 +73,12 @@ const GererS = ({ onRowSelect }) => {
                   className="h-16 cursor-pointer hover:bg-green-dark1 border-2"
                   onClick={() => handleRowClick(row)}
                 >
-                  <th className="w-20 border-2">{row.N}</th>
-                  <td className="w-[250px] border-2">{row.nom}</td>
-                  <td className="w-[250px] border-2">{row.QRCode}</td>
-                  <td className="w-[200px] border-2">{row.Quantite}</td>
+                  <th>{row.N}</th>
+                  <td>{row.nom}</td>
+                  <td >{row.QRCode}</td>
+                  <td>{row.Quantite}</td>
                   <td>
-                    <label className="flex justify-evenly items-center h-full w-full">
+                    <label className="flex justify-center gap-6 items-center h-full w-full">
                       <FaEdit
                         className=" cursor-pointer"
                         onClick={() => handleEdit(row.N)}

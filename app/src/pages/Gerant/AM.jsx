@@ -49,7 +49,7 @@ const handleSubmit = (event) => {
       {option==="Ajouter" && <p className="text-2xl text-green font-bold p-3">Ajouter un Nouveau utilisateur</p>}
       {option==="Modifier" && <p className="text-2xl text-green font-bold p-3">Modification</p>}
     
-  <form className="flex p-4 h-[550px] bg-zinc-200 rounded-lg justify-around " onSubmit={handleSubmit} onReset={handleReset}>
+  <form className="flex mt-6 p-4 h-4/5 bg-zinc-200 rounded-lg justify-around " onSubmit={handleSubmit} onReset={handleReset}>
     <div className="flex flex-col gap-10 w-1/3">
         <div>
             <label htmlFor="text" className="flex ">Nom</label>
@@ -118,7 +118,7 @@ const handleSubmit = (event) => {
       {option==="Ajouter" && <p className="text-2xl text-green font-bold p-3">Ajouter un Nouveau Produit</p>}
       {option==="Modifier" && <p className="text-2xl text-green font-bold p-3">Modification</p>}
     
-  <form className="flex p-4 h-[550px] bg-zinc-200 rounded-lg justify-around " onSubmit={handleSubmit} onReset={handleReset}>
+  <form className="flex mt-6 p-4 h-4/5 bg-zinc-200 rounded-lg justify-around " onSubmit={handleSubmit} onReset={handleReset}>
     <div className="flex flex-col gap-10 w-1/3">
         <div>
             <label htmlFor="text" className="flex ">Nom de Produit</label>

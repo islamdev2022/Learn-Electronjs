@@ -44,7 +44,6 @@ const handleRowSelection = (id ,count) => {
     return ( 
     <div className="flex bg-gray-light">
         <div className="w-1/5 bg-gradient-to-t from-green-cyan1 to-green-dark1 h-screen rounded-e-2xl">
-       <Link to='/home'> <IoArrowBackSharp className="text-white text-3xl m-2 absolute"/></Link>
              <div className="h-screen">
             <div className=" h-1/4  flex justify-center ">
             <div className="mt-6">
@@ -71,8 +70,8 @@ const handleRowSelection = (id ,count) => {
            </ul>
        
        </div>
-       <hr className='bg-white h-1'/>
-       <div className=" h-1/4 flex justify-center rounded-ee-2xl items-center ">
+       <hr className='bg-white h-1 w-1/5 absolute '/>
+       <div className=" h-1/4 flex flex-col justify-center rounded-ee-2xl items-center ">
         <div className=" py-3">
             <img src="assets/logo logiciel.png" alt="logo"  className="w-16 -rotate-45 ml-2 mb-2"/>
             <p className="text-white font-bold">Version 1.0</p>
@@ -82,9 +81,9 @@ const handleRowSelection = (id ,count) => {
         </div> 
         </div> 
         <div className="w-2 h-screen ml-2 bg-green-dark1"></div>
-        <div className="table h-screen mx-auto ">
+        <div className="table h-screen mx-auto">
             <Header choice="comptabilite"></Header>
-        <div className="w-[1100px] px-4 pt-4 ">
+        <div className="w-full px-4 pt-4 ">
         {/* Render the active component */}
         {renderComponent()}
       </div>
