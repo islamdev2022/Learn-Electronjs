@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Resultats from './Resultats';
-import { IoArrowBackSharp } from "react-icons/io5";
+import Produit from './Produit';
 import { GrNotes } from "react-icons/gr";
+import { BsMegaphone } from "react-icons/bs";
 import { FaDropbox } from "react-icons/fa";
 import Header from '../Header';
 const Medcine = () => {
@@ -20,6 +21,7 @@ const Medcine = () => {
 const [selectedRowId, setSelectedRowId] = useState(null);
 const [selectedDetails,setSelectedDetails]= useState(null)
 const [selectedRowCount, setSelectedRowCount] = useState(0)
+const [selectedOption,setSelectedOption] = useState(false)
 
 // Define a callback function to update the selected row ID
 const handleRowSelection = (id ,count) => {
@@ -32,11 +34,11 @@ const handleRowSelection = (id ,count) => {
       case 'item1':
         return <Resultats></Resultats>
       case 'item2':
-        return 
+        return <Produit></Produit>
       case 'item3':
-        return 
+        return <Produit option="declarer"/>
       case 'item4':
-        return 
+        return <Produit oprtion="signaler"/>
       default:
         return <Resultats></Resultats>
     }
@@ -57,15 +59,28 @@ const handleRowSelection = (id ,count) => {
         <hr className='bg-white h-1'/>
         <ul className="pt-5">
              <li className={`flex items-center w-60 px-3 float-right gap-5 mb-2 py-2 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg 
-             ${activeItem === 'item1' ? 'bg-green-cyan' : ''}`} onClick={() => setActiveItem('item1')}>
+             ${activeItem === 'item1' ? 'bg-green-cyan' : ''}`} onClick={() => {setActiveItem('item1') ; setSelectedOption(false)}}>
             <GrNotes className='w-10 text-white size-7' />
             <h1 className="font-bold text-white text-xl">Resultats</h1>
         </li>
         <li className={`flex items-center w-60 px-3 float-right gap-5 py-2 mb-2 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg 
-        ${activeItem === 'item2' ? 'bg-green-cyan' : ''}`} onClick={() => setActiveItem('item2')}>            
+        ${activeItem === 'item2' ? 'bg-green-cyan' : ''}`} onClick={() => {setActiveItem("item2"); setSelectedOption(true)} }>            
         <FaDropbox className='w-10 text-white size-7'/>
             <h1 className="font-bold text-white text-xl">Produits</h1>
         </li>
+        {
+          selectedOption==true && <><li className={`flex items-center w-52 px-3 float-right gap-2 py-2 mb-2 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg 
+        ${activeItem === 'item3' ? 'bg-green-cyan' : ''}`} onClick={() => setActiveItem('item3')}>            
+        <GrNotes className='w-10 text-white size-7'/>
+            <h1 className="font-bold text-white text-xl">Declarer</h1>
+        </li>
+        <li className={`flex items-center w-52 px-3 float-right gap-2 py-2 mb-2 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg 
+        ${activeItem === 'item4' ? 'bg-green-cyan' : ''}`} onClick={() => setActiveItem('item4')}>            
+        <BsMegaphone className='w-10 text-white size-7'/>
+            <h1 className="font-bold text-white text-xl">Signaler</h1>
+        </li>
+        </>
+        }
         
            </ul>
        
@@ -82,7 +97,7 @@ const handleRowSelection = (id ,count) => {
         </div> 
         <div className="w-2 h-screen ml-2 bg-green-dark1"></div>
         <div className="table h-screen mx-auto">
-            <Header choice="comptabilite"></Header>
+            <Header user="medcin"></Header>
         <div className="w-full px-4 pt-4 ">
         {/* Render the active component */}
         {renderComponent()}

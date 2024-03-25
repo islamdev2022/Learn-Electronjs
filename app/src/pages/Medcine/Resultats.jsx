@@ -74,7 +74,7 @@ const Resultats = ({ onRowSelect }) => {
         <p className="text-2xl text-green font-bold relative top-3 ">List des Analyse</p>
       <div className="w-full flex mt-10">
         <div className="scrollbar-thumb-rounded-full bg-white h-[32rem] rounded-l-lg scrollbar-thumb-green-cyan overflow-y-scroll w-full">
-          <table className="text-xl bg-gradient-to-t text-slate-500 font-semibold rounded-tl-lg w-full ">
+          <table className="text-xl bg-gradient-to-t text-slate-600 font-semibold rounded-tl-lg w-full ">
             <thead>
               <tr className="h-10 sticky top-0 w-fit bg-green-cyan rounded-lg">
                 <th className="w-1/12 rounded-tl-lg">
@@ -82,6 +82,7 @@ const Resultats = ({ onRowSelect }) => {
                     type="checkbox"
                     checked={selectAll}
                     onChange={toggleSelectAll}
+                    className=" cursor-pointer"
                   />
                 </th>
                 <th className="w-2/12">Nom</th>
@@ -109,9 +110,9 @@ const Resultats = ({ onRowSelect }) => {
                     <td></td>
                   <td>
                     <label htmlFor="" className="flex justify-evenly items-center h-full w-full">
-                    <BiCommentAdd className=" cursor-pointer" />
-                    <TbArrowsLeftRight className=" cursor-pointer" onClick={() => setShowAlertNT(true)}/>
-                    <FaCheck className=" cursor-pointer" onClick={() => setShowAlertVA(true)}/>
+                    <BiCommentAdd className=" cursor-pointer hover:bg-slate-300 size-8 p-1 rounded-2xl" />
+                    <TbArrowsLeftRight className=" cursor-pointer hover:bg-slate-300 size-8 p-1 rounded-2xl" onClick={() => setShowAlertNT(true)}/>
+                    <FaCheck className=" cursor-pointer hover:bg-slate-300 size-8 p-1 rounded-2xl" onClick={() => setShowAlertVA(true)}/>
                     {showAlertNT && <AlertModal option="nvtest" onClose={handleClose} onContinue={handleContinue} />}
                     {showAlertVA && <AlertModal option="valider" onClose={handleClose} onContinue={handleContinue} />}
 
@@ -128,39 +129,3 @@ const Resultats = ({ onRowSelect }) => {
   };
  export default  Resultats;
 
-// import {
-//     Table,
-//     TableBody,
-//     TableCaption,
-//     TableCell,
-//     TableHead,
-//     TableHeader,
-//     TableRow,
-//   } from "../../components/ui/Table"
-  
-// const Resultat = () => {
-//     return ( <>
-//     <Table>
-//   <TableCaption>A list of your recent invoices.</TableCaption>
-//   <TableHeader>
-//     <TableRow>
-//       <TableHead className="w-[100px]">Invoice</TableHead>
-//       <TableHead>Status</TableHead>
-//       <TableHead>Method</TableHead>
-//       <TableHead className="text-right">Amount</TableHead>
-//     </TableRow>
-//   </TableHeader>
-//   <TableBody>
-//     <TableRow>
-//       <TableCell className="font-medium">INV001</TableCell>
-//       <TableCell>Paid</TableCell>
-//       <TableCell>Credit Card</TableCell>
-//       <TableCell className="text-right">$250.00</TableCell>
-//     </TableRow>
-//   </TableBody>
-// </Table>
-
-//     </> );
-// }
- 
-// export default Resultat;
