@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Items from "./items";
 import PaginationControl from './pagination';
 
-const Produit = () => {
+const Produit = ({option}) => {
     const fakeItems = [
         { name: 'Item 1', number1: 23, number2: 17 },
         { name: 'Item 2', number1: 23, number2: 17 },
@@ -16,6 +16,7 @@ const Produit = () => {
         { name: 'Item 10', number1: 23, number2: 17 },
         { name: 'Item 11', number1: 23, number2: 17 },
         { name: 'Item 12', number1: 23, number2: 17 },
+        { name: 'Item 13', number1: 23, number2: 17 },
       ];
       
 
@@ -39,11 +40,27 @@ const Produit = () => {
         <div>
             
             <p className="text-2xl text-green font-bold relative top-3">Liste des Produits</p>
+            {option ==="p" && <>
             <div className="grid grid-cols-4 gap-4 mt-10 place-items-center ">
                 {getPaginatedItems().map((item, index) => (
-                    <Items key={index} nom={item.name} ND={item.number1} NU={item.number2} />
+                    <Items key={index} nom={item.name} ND={item.number1} NU={item.number2} option="p"/>
                 ))}
             </div>
+            </>}
+            {option ==="declarer" && <>
+            <div className="grid grid-cols-4 gap-4 mt-10 place-items-center ">
+                {getPaginatedItems().map((item, index) => (
+                    <Items key={index} nom={item.name} NU={item.number2} option="declarer"/>
+                ))}
+            </div>
+            </>}
+            {option ==="signaler" && <>
+            <div className="grid grid-cols-4 gap-4 mt-10 place-items-center ">
+                {getPaginatedItems().map((item, index) => (
+                    <Items key={index} nom={item.name} ND={item.number1} option="signaler"/>
+                ))}
+            </div>
+            </>}
             <PaginationControl
             totalPages={totalPages}
             currentPage={currentPage}

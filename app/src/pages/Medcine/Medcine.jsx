@@ -34,11 +34,11 @@ const handleRowSelection = (id ,count) => {
       case 'item1':
         return <Resultats></Resultats>
       case 'item2':
-        return <Produit></Produit>
+        return <Produit option="p"></Produit>
       case 'item3':
         return <Produit option="declarer"/>
       case 'item4':
-        return <Produit oprtion="signaler"/>
+        return <Produit option="signaler"/>
       default:
         return <Resultats></Resultats>
     }
@@ -64,13 +64,13 @@ const handleRowSelection = (id ,count) => {
             <h1 className="font-bold text-white text-xl">Resultats</h1>
         </li>
         <li className={`flex items-center w-60 px-3 float-right gap-5 py-2 mb-2 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg 
-        ${activeItem === 'item2' ? 'bg-green-cyan' : ''}`} onClick={() => {setActiveItem("item2"); setSelectedOption(true)} }>            
+        ${activeItem === 'item2' || activeItem==="item3" || activeItem==="item4" ? 'bg-green-cyan' : ''}`} onClick={() => {setActiveItem("item2"); setSelectedOption(true)} }>            
         <FaDropbox className='w-10 text-white size-7'/>
             <h1 className="font-bold text-white text-xl">Produits</h1>
         </li>
         {
           selectedOption==true && <><li className={`flex items-center w-52 px-3 float-right gap-2 py-2 mb-2 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg 
-        ${activeItem === 'item3' ? 'bg-green-cyan' : ''}`} onClick={() => setActiveItem('item3')}>            
+        ${activeItem === 'item3' ? 'bg-green-cyan' : ''}`} onClick={() => {setActiveItem('item3')}}>            
         <GrNotes className='w-10 text-white size-7'/>
             <h1 className="font-bold text-white text-xl">Declarer</h1>
         </li>
