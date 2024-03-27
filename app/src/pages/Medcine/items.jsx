@@ -1,18 +1,22 @@
 import { useState } from "react";
-const Items = ({option,nom,ND,NU}) => {
-    function signalerM (){
-        option="signalerM"
-    }
+const Items = ({option,id,nom,ND,NU}) => {
+
 const [SMessage,setSMessage]=useState(false)
+
+function signalItem() {
+    // Signal logic here
+    setSMessage(true);
+    // You might want to propagate this change up to the parent component
+    // if it needs to be aware of the signal state.
+}
     return ( 
     <div className="w-fit py-3 h-56 bg-white rounded-xl">
         <div className="flex flex-col  items-center w-44">
             <div className="py-2">
-                <img src="/assets/compte.png" alt="test" className="w-10 table mx-auto"/>
+                <img src="assets/compte.png" alt="test" className="w-10 table mx-auto"/>
                 <p>{nom}</p>
             </div>
             <hr className="text-slate-500 w-44 "/>
-
         {option ==="p" && <>
         <div className="py-2">
                 <p>Disponible</p>
@@ -42,7 +46,7 @@ const [SMessage,setSMessage]=useState(false)
                 <p className=" text-2xl">{ND}</p>
             </div>
              <br />
-           <button className=" bg-green-cyan text-white rounded-lg px-3 font-semibold" onClick ={setSMessage}>Signaler</button>
+           <button className=" bg-green-cyan text-white rounded-lg px-3 font-semibold" onClick ={signalItem}>Signaler</button>
         </>
         }
         {SMessage && 

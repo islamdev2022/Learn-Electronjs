@@ -47,7 +47,7 @@ const Graph = () => {
 }})
     return (
       <div className="flex flex-col gap-4">
-        <div className="flex flex-col gap-6 mt-4">
+        <div className="flex flex-col gap-6 mt-2">
           <p className="text-3xl font-semibold">12-Weeks Trend</p>
           <div className="flex flex-row justify-center gap-24 ">
             <p className="flex items-center gap-1"><div className="h-4 w-4 bg-green rounded-2xl"></div>Earnings : $3500</p>
@@ -66,9 +66,10 @@ const Graph = () => {
           />
         </div>
         <hr />
-        <div className="flex h-full">
-          <div className="flex flex-col justify-center items-center p-6 border-e-2 gap-3">
-            <p className="font-bold underline">Time Frame</p>
+        <div className="flex h-full relative bottom-2 gap-6">
+          <div className="flex flex-col justify-center items-center p-5 border-e-2 border-neutral-500 ">
+            <p className="font-semibold underline">Time Frame</p>
+            <br />
             <select className="rounded-lg p-1 px-2 outline ">
               <option value="" >year</option>
               <option value={2023}>2023</option>
@@ -79,12 +80,12 @@ const Graph = () => {
                </select>
           </div>
           <div className="p-5">
-            <p className="font-bold underline">Number of Tests</p>
+            <p className="font-semibold underline">Number of Tests</p>
           <br />
           <span className="flex justify-start">100</span>
           </div>
-          <div className="p-6">
-            <p className="font-bold underline">Total Net</p>
+          <div className="p-5">
+            <p className="font-semibold underline">Total Net</p>
           <br />
           <span>100$</span>
           </div>
