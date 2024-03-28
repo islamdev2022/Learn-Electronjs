@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Suprimer from './Suprimer';
 import Afficher from '../Afficher';
-import { Button } from '../../../components/ui/button';
 import AM from '../AM';
 
 import Header from '../../Header';
@@ -99,7 +98,7 @@ const handleRowSelection = (id ,count) => {
         </div> 
         <div className="w-2 h-screen ml-2 bg-green-dark1"></div>
         <div className="table h-screen mx-auto">
-            <Header choice="personnel"></Header>
+            <Header choice="personnel" user="gerant"></Header>
             <div className="w-full px-4 pt-4 ">
         {/* Render the active component */}
         {renderComponent()}

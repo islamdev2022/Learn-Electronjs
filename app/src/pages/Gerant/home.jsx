@@ -48,7 +48,7 @@ const Home = () => {
             </div></Link>
             
            <button className="absolute bottom-24 bg-green-dark1 w-48 text-white h-12 rounded-lg font-bold" onClick={() => setShowAlert(true)} > Deconnexion</button>
-           {showAlert && <AlertModal onClose={handleClose} onContinue={handleContinue} />}
+           {showAlert && <AlertModal option="deconnecter" onClose={handleClose} onContinue={handleContinue} />}
         </div>
          
        </div>

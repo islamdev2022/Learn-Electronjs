@@ -5,6 +5,7 @@ import Afficher from '../Afficher';
 import AM from '../AM';
 import Header from '../../Header';
 import { IoArrowBackSharp } from "react-icons/io5";
+import { MdAddShoppingCart } from "react-icons/md";
 const Stock = () => {
 
 
@@ -42,7 +43,7 @@ const handleRowSelection = (id ,count) => {
     }
   };
     return ( 
-    <div className="flex w-fit bg-gray-light">
+    <div className="flex  bg-gray-light">
         <div className="w-1/5 bg-gradient-to-t from-green-cyan1 to-green-dark1 h-screen rounded-e-2xl">
        <Link to='/home'> <IoArrowBackSharp className="text-white text-3xl m-2 absolute"/></Link>
              <div className="h-screen">
@@ -64,7 +65,7 @@ const handleRowSelection = (id ,count) => {
         </li>
         <li className={`flex items-center w-60 px-3 float-right gap-5 py-1 mb-2 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg 
         ${activeItem === 'item2' ? 'bg-green-cyan' : ''}`} onClick={() => setActiveItem('item2')}>            
-        <img src="assets/ajouter-un-utilisateur copy.png" alt="ajouter" className="w-10"/>
+       <MdAddShoppingCart className=' text-white size-10'/>
             <h1 className="font-bold text-white text-xl">AJOUTER</h1>
         </li>
         
@@ -84,7 +85,7 @@ const handleRowSelection = (id ,count) => {
         </ul>
        
        </div>
-       <hr className='bg-white h-1'/>
+       <hr className='bg-white h-1 w-1/5 absolute'/>
        <div className=" h-1/4 flex justify-center rounded-ee-2xl items-center ">
         <div className=" py-3">
             <img src="assets/logo logiciel.png" alt="logo"  className="w-16 -rotate-45 ml-2 mb-2"/>
@@ -96,8 +97,8 @@ const handleRowSelection = (id ,count) => {
         </div> 
         <div className="w-2 h-screen ml-2 bg-green-dark1"></div>
         <div className="table h-fit mx-auto">
-            <Header choice="stock"></Header>
-        <div className="w-[1100px]  p-4">
+            <Header choice="stock" user="gerant"></Header>
+        <div className="w-full  p-4">
         {/* Render the active component */}
         {renderComponent()}
       </div>

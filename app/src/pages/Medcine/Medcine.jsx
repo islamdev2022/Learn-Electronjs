@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import Resultats from './Resultats';
 import Produit from './Produit';
 import { GrNotes } from "react-icons/gr";

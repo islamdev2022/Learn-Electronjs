@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Suprimer from '../Personnel/Suprimer';
-import { Button } from '../../../components/ui/button';
-import AM from '../AM';
 import Graph from './Graph';
-
 import Header from '../../Header';
 import { IoArrowBackSharp } from "react-icons/io5";
+import { MdOutlineCalculate } from "react-icons/md";
+import { GiMoneyStack } from "react-icons/gi";
+import { LiaNewspaperSolid } from "react-icons/lia";
 import CalculerR from './CalculerR';
 import GererS from './GererS';
 const Comptabilite = () => {
@@ -67,23 +66,23 @@ const handleRowSelection = (id ,count) => {
             <img src="assets/lanalyse-des-donnees copy.png" alt="afficher" className="w-10"/>
             <h1 className="font-bold text-white text-xl">Statistics</h1>
         </li>
-        <li className={`flex items-center w-60 px-3 float-right gap-5 py-1 mb-2 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg 
+        <li className={`flex items-center w-60 px-2 float-right gap-5 py-1 mb-2 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg 
         ${activeItem === 'item2' ? 'bg-green-cyan' : ''}`} onClick={() => setActiveItem('item2')}>            
-        <img src="assets/ajouter-un-utilisateur copy.png" alt="ajouter" className="w-10"/>
+        <MdOutlineCalculate className='text-white w-11 size-11' />
             <h1 className="font-bold text-white text-xl">Calculer Revenu</h1>
         </li>
         
            <li className={`flex items-center w-60 px-3 float-right gap-5 py-1 mb-2 hover:bg-green-cyan rounded-s-lg 
            ${activeItem === 'item3' ? ' bg-green-cyan' : ''} cursor-pointer`} 
            onClick={() => {setActiveItem('item3')}}>            
-        <img src="assets/editer copy.png" alt="modifier" className="w-10"/>
+        <GiMoneyStack className='text-white w-10 size-10' />
             <h1 className="font-bold text-white text-xl">Gerer Salleries</h1>
         </li>
         
         
         <li className={`flex items-center w-60 px-2 float-right gap-5 py-1 mb-2 hover:bg-green-cyan rounded-s-lg 
         ${activeItem === 'item4' ? 'bg-green-cyan' : ''} cursor-pointer`} onClick={() => {setActiveItem('item4')}}>            
-        <img src="assets/supprimer copy.png" alt="supprimer" className="w-10"/>
+       <LiaNewspaperSolid className='text-white size-10'/>
             <h1 className="font-bold text-white text-xl">Gere Les Factures</h1>
         </li>
         </ul>
@@ -101,7 +100,7 @@ const handleRowSelection = (id ,count) => {
         </div> 
         <div className="w-2 h-screen ml-2 bg-green-dark1"></div>
         <div className="table h-screen mx-auto ">
-            <Header choice="comptabilite"></Header>
+            <Header choice="comptabilite" user="gerant"></Header>
         <div className="w-full px-4 pt-4 ">
         {/* Render the active component */}
         {renderComponent()}

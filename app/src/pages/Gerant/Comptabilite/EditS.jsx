@@ -8,7 +8,6 @@ const [formData,setFormData]=useState({
   id:'',
   mdb:'',
   spec:'',
-  sexe:""
 })
 const handleReset = () => {
   setFormData(initialState);
